@@ -1,0 +1,101 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+.main{
+    clear: both;
+}
+.sil{
+    position: absolute;
+    width: 100%;
+}
+.pp{
+    
+    position: relative;
+    height: 120px;
+    max-width: 250px;
+    margin:10px 0px 0px 0px ;
+    border:3px solid orange;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+.content{
+    padding: 30px;
+}
+.name{
+    max-width: 350px;
+    margin-left: 40px;
+    float: left;
+    font-family: cursive;
+}
+.buttons{
+    margin:10px 0px 0px 90px;
+    float:left;
+}
+.buttons button{
+    font-size: 15px;
+    height: 40px;
+    width:170px;
+    border: none;
+    background-color: orange;
+    border-radius: 10px;
+}
+.buttons button:hover{
+    background-color: green;
+    color: white;
+}
+.details{
+   
+    float: right;
+    font-size:15px;
+    height:350px;
+    max-width: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: solid black;
+    background-color:blanchedalmond;
+    clear: both;
+}
+.details p{
+    margin-left: 10px;
+}
+.bio{
+    height: 100px;
+    width:800px ;
+    margin-top: 10px;
+    padding: 30px;
+}
+.comment{
+    font-family: cursive;
+    font-size: 14px;
+}
+.t{
+    margin-top: 90px;
+    color: black;
+}
+.how {
+    margin: 10px;
+    padding: 30px;
+    font-family: 'Times New Roman', Times, serif;
+  
+}
+.HOW b{
+    color: black;
+
+}
+
+.review{
+    padding: 30px;
+}
+.review input{
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    border-radius: 10%;
+}
+
+.review input:hover{
+    
+    background-color: green;
+    
+}

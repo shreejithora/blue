@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Find a guide{%endblock%}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/findaguide.css' %}">
+{% endblock %}
+
+{% block nav-bar %}
+	<ul>
+		<a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+		<a href="{% url 'destination:findaguide'%}"><li><span>Find a Guide</span></li></a>
+		<a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+		<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+		<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+		<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+		{%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+		<!-- <a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a> -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </ul>
+{% endblock %}
+
+{% block media_content %}
+<div class="search-container">
+    <div class="dropdown">
+    <button class="dropbtn">Sort by</button>
+    <div class="dropdown-content">
+    <a href="#">Age</a>
+	<a href="#">Gender</a>
+	<a href="#">Price</a>
+    </div>
+    </div>
+
+			<form action="/action_page.php">
+			  <input type="text" placeholder="Search for a trek or tour">
+			  	<button class="bar" type="submit"><i class="fa fa-search"></i></button>
+			 </form>
+
+	</div>
+    <div class="mid">
+        <div class="card" >
+			<img src="../../media/image/b.jpg" alt="" >
+			<a  href="Richa.html"><p class="name">Richa Thapa</p></a>
+			<h2>Certified guide</h2>
+			<p><b>Hourly pay: 10$<br>
+				Daily pay: 30$</b></p>
+
+			<BUTTON><a href="{% url 'destination:richa' %}">Guide Profile</a></BUTTON>
+			<button><a href="{% url 'destination:hireform' %}">Schedule tour</a></button>
+
+		</div>
+		<div class="card" >
+			<img src="../../media/image/A.jpg" alt="" >
+			<a  href=""><p class="name" >Shrey Lama</p></a>
+			<h2>Certified <a href="#" class="Local">Local</a> guide</h2>
+			<p><b>Hourly pay: 10$<br>
+				Daily pay: 25$</b></p>
+			<BUTTON><a href="guideprofile.html">Guide Profile</a></BUTTON>
+			<button><a href="">Schedule tour</a></button>
+		</div>
+
+		<div class="card" >
+			<img src="../../media/image/C.jpg" alt="" >
+			<a  href=""><p class="name">Sara Sharma</p></a>
+			<h2>Certified guide</h2>
+			<p><b>Hourly pay: 12$<br>
+				Daily pay: 35$</b></p>
+
+			<BUTTON><a href="guideprofile.html">Guide Profile</a></BUTTON>
+			<button><a href="">Schedule tour</a></button>
+
+		</div>
+		<div class="card" >
+			<img src="../../media/image/D.jpg" alt="" >
+			<a  href=""><p class="name">Alish Shrestha</p></a>
+			<h2>Certified guide</h2>
+			<p><b>Hourly pay: 11$<br>
+			 Daily pay: 30$</b></p>
+
+			<BUTTON><a href="guideprofile.html">Guide Profile</a></BUTTON>
+			<button><a href="">Schedule tour</a></button>
+
+		</div>
+
+	</div>
+{% endblock%}
+
+

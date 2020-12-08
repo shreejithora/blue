@@ -1,0 +1,50 @@
+
+ .mid p{
+  color: grey;
+  text-align: center;
+   margin:20px 30px 10px 30px;
+  font-size:30px; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.mid  h1{color: grey;
+ text-align: center;
+   margin:20px 30px 10px 30px;
+  font-size:18px; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.main{
+  height: 300px;
+align-content: center;
+display:flex;
+justify-content:center;
+}
+.card {
+  color: grey;
+  margin: 30px 50px 10px 10px;
+  padding: 10px;
+ float: left;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 250px;
+text-align: center;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: grey;
+}
+.card p{
+  height:100px;
+  font-size: 15px;
+  color: grey;
+}
+
+.title {
+color: grey;
+font-size: 15px;
+}
+ .card a{
+  color: black;
+ }

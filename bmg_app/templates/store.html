@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{%endblock%}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/store.css' %}">
+    {% endblock %}
+
+{% block nav-bar %}
+    <ul>
+		<a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+		<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+		<a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+		<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+		<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+		<a href="{% url 'bmg_app:store'%}"> <li> <span>Store</span> </li></a>
+        {%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </ul>
+{% endblock %}
+
+{% block media_content %}
+
+<p>Get the best offers online.</p>
+<div class="content">
+
+    <div class=card-change>
+        <img src="../media/image/zip.jpg">
+        <p><b>Adventure Sports Nepal</b></p>
+             <p>Couple zipline package at only 20$.Get the offer right now!</p>
+    </div>
+    <div class=card-change>
+        <img src="../media/image/1.jpg">
+         <p><b>Welcome Trekking Store</b></p>
+             <p>Buy the best trek gear online at okdam.com.</p>
+    </div>
+    <div class=card-change>
+        <img src="../media/image/rent.jpg">
+        <p><b>Kalapathar trekking store</b></p>
+        <p>Rent your trekking gear at the best price.</p>
+    </div>
+
+</div>
+
+{% endblock%}

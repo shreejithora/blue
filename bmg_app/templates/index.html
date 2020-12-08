@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+	Home page
+{% endblock %}
+
+{% block css %}
+	
+{% endblock %}
+
+{% block nav-bar %}
+    <ul>
+		<a href="{% url 'bmg_app:home'%}"> <li><span>Home</span></li></a>
+		<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+		<a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+		<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+		<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+		<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+		{%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </ul>
+{% endblock %}
+
+{% block media_content %}
+<div class="head">
+
+		<div class="head-pic" style="background-image: url('media/image/wall.jpg');">
+			<div class="search">
+		<div class="search-box">
+
+			<input type="text" placeholder="Search.." >
+
+		</div>
+	</div>
+
+		</div>
+	</div>
+	<hr>
+	<!-- guides -->
+	<div class="mid">
+        <div class="card" >
+			<img src="../media/image/b.jpg" alt="" >
+			<a  href="Richa.html"><p class="name">Richa Thapa</p></a>
+
+
+		</div>
+		<div class="card" >
+			<img src="../media/image/A.jpg" alt="" >
+			<a  href=""><p class="name" >Shrey Lama</p></a>
+
+
+		</div>
+
+		<div class="card" >
+			<img src="../media/image/C.jpg" alt="" >
+			<a  href=""><p class="name">Sara Sharma</p></a>
+
+
+		</div>
+		<div class="card" >
+			<img src="../media/image/D.jpg" alt="" >
+			<a  href=""><p class="name">Alish Shrestha</p></a>
+
+
+		</div>
+
+	</div>
+	<!-- back-img -->
+	<div class="back-img" style="background-image: url('media/image/lumbini.jpg');">
+		<div class="destination-content">
+			<h1>VIEW YOUR DESTINATION</h1>
+			<p>If the destination is heaven, why do we scramble to be first in line for hell?</p>
+			<button>Show your destination</button>
+		</div>
+	</div>
+{% endblock %}
+

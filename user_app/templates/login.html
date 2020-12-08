@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login page{%endblock%}
+
+    {% block css %}
+    {% endblock %}	
+	
+{% block nav-bar %}
+	<ul>
+     <a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+     <a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+     <a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+     <a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+     <a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+     <a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+     <a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i><span>Login</span></li></a>
+     <a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </ul>
+{% endblock %}
+
+	
+{% block media_content %}
+<div class="forms">
+    <ul class="tab-group">
+        <li class="tab active"><a href="#login">Log In</a></li>
+        
+
+    </ul>
+    <form method="POST" action="#" id="login">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" name="email" required="email" />
+            <label for="password">Password</label> 
+            <input type="password" name="password" required/><br><br>
+            <input type="submit" value="Login" class="button"/>
+            <p class="text-p"> <a href="#">Forgot password?</a> </p>
+        </div>
+    </form>
+    
+</div>
+{% endblock%}
+
+
+
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Annapurna{%endblock%}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/Alltreks.css' %}">
+
+    {% endblock %}
+
+{% block nav-bar %}
+<ul>
+	<a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+	<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+	<a href="{% url 'destination:trekandtour'%}"> <li> <span> Tour and Treks</span></li></a>
+	<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+	<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+	<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+	{%if 'id' in request.session%}
+	<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+	{%endif%}
+	{% block login%}
+	{%if 'id' not in request.session%}
+		<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+		<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+	{%endif%}
+	{% endblock %}
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+</ul>
+{% endblock %}
+
+{% block media_content %}
+    <div class="middle">
+		<h1 style="margin-left: 10px;">Annapurna Base Camp</h1><br>
+		<img src="../../media/image/abc.jpg" style="border-radius: 20px;;">
+		<div class="content">
+		 <h2>Overview</h2>
+		 <h3><b>Maximum Elevation:</b>5416 meters, Thorong La Pass </h3>
+		 <h3><b>Duration:</b>12 days</h3>
+		 <h3><b>Dificulty:</b>Moderate</h3>
+		 <h3><b>Accomodation:</b>Teahouse/Lodge</h3>
+		 <h3><b>Permit needed:</b>ACAP,TIMS</h3><br>
+		<a href="{% url 'destination:findaguide' %}"><button type="button" style="border-radius: 10px;"><b>FIND A GUIDE</b></button></a>
+		</div><br><br>
+		<P style="font-family: sans-serif;">There are few treks that combine so many different landscapes and bring you so close to the base of 7,000 and 8,000 meter peaks in a such a short period of time as the Annapurna Base Camp Trek.
+			The Annapurna Base Camp trek is one of the most popular treks in the Annapurna region. The trail goes alongside terraced rice paddies, lush rhododendron forests and high altitude landscapes with the Annapurna Range in view most of the times.</P>
+	</div>
+{% endblock%}

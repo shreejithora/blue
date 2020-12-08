@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}everest{%endblock%}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/Alltreks.css' %}">
+
+    {% endblock %}
+
+{% block nav-bar %}
+<ul>
+	<a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+	<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+	<a href="{% url 'destination:trekandtour'%}"> <li> <span> Tour and Treks</span></li></a>
+	<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+	<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+	<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+	{%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+   </ul>
+{% endblock %}
+
+{% block media_content %}
+  <div class="middle">
+		<h1>Everest Base Camp</h1>
+		<img src="image/everest.jpg">
+		<div class="content">
+		 <h2>Overview</h2>
+		 <h3><b>Maximum Elevation: </b>5600 meters, Kala Patthar </h3>
+		 <h3><b>Duration:</b>14 days</h3>
+		 <h3><b>Dificulty:</b>Moderate to hard</h3>
+		 <h3><b>Accomodation:</b>Teahouse</h3>
+		 <h3><b>Permit needed:</b>TIMS, Sagarmatha National Park Permit</h3>
+		<button onclick=""><b>FIND A GUIDE</b></button>
+		</div>
+		<P>The Everest Base Camp Trek is one of the beautiful and most trekked routes in Nepal. Many tourists visit Nepal to walk in the Sagarmatha region to enjoy the enticing mountain views. The trek starts from Lukla- a flight from Kathmandu.</P>
+	</div>
+{% endblock%}

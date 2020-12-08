@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Signup page{%endblock%}
+
+    {% block css %}
+    {% endblock %}
+
+{% block nav-bar %}
+     <ul>
+     <a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+     <a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+     <a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+     <a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+     <a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+     <a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+     <a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+     <a href="{% url 'user:signup_guide'%}"> <li><span>Register ?</span></li></a>
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+      </ul>
+{% endblock %}
+
+{% block media_content %}
+    <div class="forms">
+      <ul class="tab-group">
+        <li class="tab"><a href="{% url 'user:signup_guide'%}">Register as a Guide</a></li>
+        <li class="tab active"><a href="{% url 'user:signup_tourist'%}">Register as a Traveler</a></li>
+      </ul>
+
+      <form method="POST" action="#" id="#">
+        {% csrf_token %}
+        <h1>Register as a Tourist</h1>
+          <div class="input-field">
+            <div class="row">
+              <label for="username">Username</label> 
+              <input type="text" name="username" required="username"/>
+            </div>
+            <label for="email">Email</label> 
+            <input type="email" name="email" required="email"/>
+            <label for="password">Password</label> 
+            <input type="password" name="password" required/>
+            <label for="password">Confirm Password</label> 
+            <input type="password" name="password1" required/><br><br>
+            <div class="sex">
+              <label for="gender">Gender</label> <br>
+              <input type="radio" name="gender" value="0" > Male
+              <input type="radio" name="gender" value="1"> Female
+              <input type="radio" name="gender" value="2"> Others
+            </div><br>
+            <input type="checkbox" name="is_tourist" checked hidden>
+            <input type="submit" value="Sign up" class="button" />
+          </div>
+      </form>
+    </div>
+{% endblock%}

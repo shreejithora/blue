@@ -1,0 +1,61 @@
+.middle{
+    width:100%;
+    height: 80vh;
+    font-family: Century gothic;
+     display: flex;
+    justify-content: center;
+}
+
+.search-container{
+    height: 30px;
+    width: 100%;
+    background-color:blanchedalmond;
+}
+.search-container input{
+    width: 50vh;
+    float:right;
+}
+/*.search-container button{
+    float:right;
+}*/
+.middle .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    margin: 10px 50px 10px 10px;
+    padding: 10px;
+  }
+
+  .middle  .row1 .card img{
+border-radius: 0%;  }
+.middle .row2 .card img{
+    border-radius: 0%;
+}
+
+
+.middle .card h1{
+    height: 20px;
+    font-family: sans-serif;
+    text-align: center; 
+    color: #000;
+}
+.middle .card h1:hover
+{color: orangered;
+}
+.middle .card a{
+    height: 60px;
+    text-decoration: none;
+    font-size: 11PX;
+   
+}
+
+.search-container a{
+    text-decoration: none;
+    margin-left: 50px;
+    color: black;
+    opacity: 0.8;
+}
+.search-container a:hover{
+    color: orange;
+}
+
+

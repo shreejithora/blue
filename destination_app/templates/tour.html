@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kathmandu{%endblock%}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tour.css' %}">
+
+    {% endblock %}
+
+{% block nav-bar %}
+<ul>
+	<a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+	<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+	<a href="{% url 'destination:trekandtour'%}"> <li> <span> Tour and Treks</span></li></a>
+	<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+	<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+	<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+	{%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+</ul>
+{% endblock %}
+
+{% block media_content %}
+
+<div class="promotion">
+	<div class="content">
+		<img src="../../media/image/abc.jpg">
+	</div>
+	<div class="content">
+		<h1>Annapurna Base Camp </h1>
+		<p>Number of tourist: 13</p>
+		<p>Cost :100$</p>
+		<p>Time : 3 days</p>
+		<p>Annapurna base camp trek is an amazing walk through diverse landscape and culture complete with rich mountain vistas, terraced fields, quaint Gurung villages and a wide variety of flora and fauna.</p>
+	</div>
+</div>
+
+
+{% endblock%}

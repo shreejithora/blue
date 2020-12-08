@@ -1,0 +1,141 @@
+.dropbtn {
+  height: 35px;
+  font-family: georgia;
+  color:black;
+  padding: 7px 20px 7px 20px;
+  font-size:17px;
+  cursor: pointer;
+  margin-right: 100px;
+  background-color: orange;
+  border: none;
+  border-radius: 10px;
+}
+
+.dropdown {
+  float: right;
+  position: relative;
+ 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+ background-color:green;
+ border-radius: 10%;
+ color:white;
+ }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+ background-color:green;
+ border: 0px;
+color:white;
+}
+.search-container{
+   margin: 7px;
+    height: 35px;
+    background-color:#0000;
+}
+.search-container input{
+  height: 30px;
+    width: 80vh;
+    float:left;
+}
+.bar{
+
+  height: 35px;
+  width:6vh;
+}
+
+
+  .card img{
+    height: 150px;
+    max-width: 250px;
+    border-radius: 50%;
+
+  }
+  .card {
+   float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    margin: 80px 30px 10px 50px;
+    padding: 7px;
+    text-align: center;
+
+  }
+  .name
+  {
+    max-height: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: top;
+   color: black;
+   font-size:20px;
+   margin-top: 30px;
+  }
+  .bio{
+   font-size: 10px;
+   margin: 5px;
+  }
+
+.name:hover
+{
+  color: green;
+}
+.card h2{
+  color: grey;
+  font-size: 10px;
+  margin: 20px 0px 10px 0px;
+
+}
+.card a{
+    text-decoration: none;
+    font-size: 15PX;  
+}
+.card b{
+  margin-top: 0PX;
+  font-size: 12px;
+}
+.card button{
+  margin-top: 10px;
+  font-size: 11px;
+  background-color: orange;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  text-align:center;
+}
+.card button a{
+  font-size: 13px;
+  text-align: center;
+  color: #000;
+}
+.card button:hover{
+
+  color: white;
+  background-color: green;
+}
+.card a:hover{
+  color: white;
+}
+
+.card h2 a{
+  color: orangered;
+  font-size: 10px;
+}

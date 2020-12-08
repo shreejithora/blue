@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Signup page{%endblock%}
+
+    {% block css %}
+    {% endblock %}
+
+{% block nav-bar %}
+  <ul>
+    <a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+    <a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+    <a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+    <a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+    <a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+    <a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+    <a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+    <a href="{% url 'user:signup_guide'%}"> <li><span>Register ?</span></li></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+  </ul>
+{% endblock %}
+
+{% block media_content %}
+  <div class="forms">
+    <ul class="tab-group">
+      <li class="tab active"><a href="{% url 'user:signup_guide'%}">Register as a Guide</a></li>
+      <li class="tab"><a href="{% url 'user:signup_tourist'%}">Register as a Traveler</a></li>
+    </ul>
+    
+    <form method="POST" action="#" id="signupG">
+    {% csrf_token %}
+    <h1>Register as a Guide</h1>
+      <div class="input-field">
+        <div class="row">        
+          <label for="fname">Firstname</label> 
+          <input type="text" name="first_name" required/><br><br>
+          <label for="lname">Lastname</label> 
+          <input type="text" name="last_name" required/><br><br>
+        </div>
+        <label for="username">Username</label> 
+        <input type="text" name="username" required="username"/><br><br>
+        <label for="age" >Age</label> 
+        <input type="number" min=18 name="age" value="18" required="age" /><br><br>
+        <label for="bio">Bio</label> 
+        <textarea name="bio_desc" id="" cols="50" rows="5"></textarea><br><br>
+        <!-- <input type="text" name="bio_desc" required="description"/><br><br> -->
+        <label for="email">Email</label> 
+        <input type="email" name="email" required="email"/><br><br>
+        <label for="password">Password</label> 
+        <input type="password" name="password" required/><br><br>
+        <label for="password">Confirm Password</label> 
+        <input type="password" name="password1" required/><br><br>
+        <label for="hrate">Rate per hour</label> 
+        <input type="text" name="hour_rate" value="1000" required/>NRs.<br><br>
+        <label for="drate">Rate per day</label> 
+        <input type="text" name="day_rate" value="3000" required/>NRs.<br><br>
+            <div class="sex">
+                <label for="gender">Gender</label> <br>
+                <input type="radio" name="gender" value="0" > Male
+                <input type="radio" name="gender" value="1"> Female
+                <input type="radio" name="gender" value="2"> Others
+            </div><br>
+        <label for="address">Full address</label> 
+        <input type="text" name="address" /><br><br>
+        <label for="Phone">Phone</label> 
+        <input type="text" name="phone" required="phone"/><br><br>
+        <label for="photo">Photo</label> 
+        <input type="file" name="user_img" required/> <br><br>
+        <label for="citizen">Citizenship<span style="font-size: 10px;">(*Scanned both sides)</span></label> 
+        <input type="file" name="citizenship_img" required/> <br><br>
+        <label for="liscence">Tourist Guide Liscence<span style="font-size: 10px;">(*Scanned both sides)</span></label> 
+        <input type="file" name="Liscence_img" required/><h6><br>
+        <label>Languages</label>
+        <select multiple="multiple" class="multiselect" id="my-select" name="languages">
+          <option value='elem_1' name="nepali">Nepali</option>
+          <option value='elem_2' name="english">English</option>
+          <option value='elem_3' name="spanish">Spanish</option>
+          <option value='elem_4' name="hindi">Hindi</option>
+          <option value='elem_5' name="chinese">Chinese</option>
+        </select><br><br>
+        <label>Destination</label>
+        <select multiple="multiple" class="multiselect" id="my-select" name="locations">
+          <option value='elem_1' name="kathmandu">kathmandu</option>
+          <option value='elem_2' name="Bhaktapur">Bhaktapur</option>
+          <option value='elem_3' name="lalitpur">lalitpur</option>
+          <option value='elem_4' name="Everest"> Everest Base Camp </option>
+          <option value='elem_5' name="Annapurna"> Annapurna Base Camp</option>
+        </select><br><br>
+        <input type="submit" value="Sign up" class="button" required/>
+      </div>
+    </form>
+  </div>
+{% endblock%}

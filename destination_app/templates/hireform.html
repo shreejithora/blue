@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Hire Guide{%endblock%}
+
+{% block css %}
+{% endblock %}
+
+{% block nav-bar %}
+<ul>
+    <a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+    <a href="{% url 'destination:findaguide' %}"> <li>Find a Guide</li></a>
+	<a href="{% url 'destination:trekandtour'%}"> <li> <span> Tour and Treks</span></li></a>
+    <a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+    <a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+    <a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+	{%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+</ul>
+{% endblock %}
+
+{% block media_content %}
+	<div class="forms">
+    <ul class="tab-group">
+        <li class="tab active"><a href="#hire">Guide hire form</a></li>
+
+
+
+    </ul>
+    <form action="" id="login" method="POST">
+        {% csrf_token %}
+          <h1>Hire a Guide</h1>
+          <div class="input-field">
+            <label for="name">Username</label>
+            <input type="text" name="username" value=""/><br><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" value=""/><br><br>
+            <label for="date">Date</label>
+            <input type="date" name="pick_date" value="" id="txtDate"/><br><br>
+            <label for="address">Full addresss</label>
+            <input type="text" name="full_address" required/><br><br>
+            <label for="contact">Phone</label>
+            <input type="text" name="phone" placeholder="for eg: +977 for Nepal" required/><h6>*with country code</h6><br>
+            <label for="country">Country</label>
+            <input type="text"  name="country" required/><br><br>
+            <label for="group">Request</label>
+            <select name="tour" id="tours">
+                <option value="shared">shared</option>
+                <option value="private">private</option>
+            </select><br><br>
+			<label for="tour_no">Traveling days</label>
+			<select>
+				  <option value="one">1</option>
+				  <option value="two">2</option>
+				  <option value="three">3</option>
+				  <option value="four">4</option>
+				  <option value="five">5</option>
+				  <option value="six">6</option>
+				  <option value="seven">7</option>
+				  <option value="eight">8</option>
+
+			</select>
+            <br>
+            <br>
+            <div class="buttons">
+                <a href="{% url 'destination:hireform' %}"><button type="submit">Hire</button></a>
+            </div>
+            
+
+
+          </div>
+      </form>
+      <script>
+        $(function(){
+        var dtToday = new Date();
+        
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+        
+        var minDate= year + '-' + month + '-' + day;
+        
+        $('#txtDate').attr('min', minDate);
+    });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</div>
+
+
+
+{% endblock%}
+
+
+
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kathmandu{%endblock%}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/alltours.css' %}">
+
+    {% endblock %}
+
+{% block nav-bar %}
+<ul>
+	<a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+	<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+	<a href="{% url 'destination:trekandtour'%}"> <li> <span> Tour and Treks</span></li></a>
+	<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+	<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+	<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+	{%if 'id' in request.session%}
+		<a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+		{%endif%}
+		{% block login%}
+		{%if 'id' not in request.session%}
+			<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+			<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		{%endif%}
+		{% endblock %}
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+</ul>
+{% endblock %}
+
+{% block media_content %}
+  <div class="middle">
+		<h1>Kathmandu sightseeing Tour</h1>
+		<img src="../../media/image/ktm.jpg">
+		<div class="content">
+		 <h2><b>Overview</b></h2>
+		 <h3><b>Duration:</b>1 days</h3>
+		 <h4><b>Tour Highlights</b></h4>
+		   <h3>Swayambhunath Temple</h3>
+           <h3> Kathmandu Durbar Square</h3>
+           <h3> Boudhanath Stupa</h3>
+           <h3> Pashupatinath Temple</h3>
+		   <button onclick=""><b>FIND A GUIDE</b></button>
+		</div>
+		<P> Roam around this beautiful city and get to know the history and legends hidden within its structures. </P>
+	</div>
+{% endblock%}

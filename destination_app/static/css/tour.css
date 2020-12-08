@@ -1,0 +1,23 @@
+.promotion{
+	display: inline-flex;
+	border: 1px solid orange;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+	padding: 10PX;
+	width: 90%;
+
+}
+
+.promotion img{
+	height: 200px;
+	width: 300px;
+}
+
+.content1{
+	margin-left: 15px;
+
+}
+.itiniery .long{
+	display: none;
+}

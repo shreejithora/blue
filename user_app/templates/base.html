@@ -1,0 +1,103 @@
+{% load static %}
+<html>
+<head>
+	<title>{% block title %}Home page{% endblock %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+<body>
+
+	<div class="container">
+    <div class="logo wow slideInLeft">
+        <a href="#"><img src="../../media/image/bmg.png" alt="" width="130"/></a>
+     </div>
+
+    <nav class="menu wow bounceInUp" id="myTopnav">
+{% block nav-bar %}
+    <ul>
+		<a href="{% url 'bmg_app:home'%}"> <li><span>Home</span></li></a>
+		<a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+		<a href="{% url 'destination:trekandtour'%}"> <li>Tour and Treks</li></a>
+		<a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+		<a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+		<a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+		<a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+		<a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </ul>
+{% endblock %}
+     </nav>
+      <div class="logo wow slideInLeft" style="float: right;">
+       <img id=visit src="../../media/image/visit.png" alt="image" width="110"/>
+     </div>
+  </div>
+  <hr>
+    {% block media_content %}
+
+    {% endblock %}
+
+    <!-- footer -->
+<footer class="footer-distributed">
+
+      <div class="footer-left">
+          <img src="../../media/image/bmg.png">
+
+
+        <p class="footer-links">
+          <a href="#">Home</a>
+          |
+          <a href="#">Blog</a>
+          |
+          <a href="#">About</a>
+          |
+          <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">© 2020 Book My Guide ...</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fas fa-map-marker"></i>
+            <p><span>Lalitpur,Katmandu</span>
+            </p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 22-27782183</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@eduonix.com">bookmyguide1@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+
+<!--<script src="js/wow.min.js"></script>-->
+<!--<script>-->
+<!--              new WOW().init();-->
+<!--</script>-->
+
+</body>
+</html>

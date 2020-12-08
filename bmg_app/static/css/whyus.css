@@ -1,0 +1,24 @@
+.content{
+    
+    font-family:georgia;
+    margin: 20px;
+    padding: 22px;
+}
+.content h1{
+	color: grey;
+	padding:5px;
+	 font-family:georgia /*"HCo Whitney SSm","Whitney SSm A","Whitney SSm B","WhitnBoo","ProximaNova-Regular",sans-serif*/;
+}
+.content p{
+	color: grey;
+	 font-family:georgia;
+    font-size: 15px;
+    padding:5px;
+
+}
+.content li{
+	font-size: 15px;
+	color: grey;
+	font-family:georgia;
+
+}

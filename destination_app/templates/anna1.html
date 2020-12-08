@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tours and trek{%endblock%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/toursandtreks.css'%}">
+    {% endblock %}
+
+{% block nav-bar %}
+		 <ul>
+     <a href="{% url 'bmg_app:home'%}"> <li>Home</li></a>
+     <a href="{% url 'destination:findaguide'%}"> <li>Find a Guide</li></a>
+     <a href="{% url 'destination:trekandtour'%}"> <li><span>Tour and Treks</span></li></a>
+     <a href="{% url 'bmg_app:ourservice'%}"> <li>Our Services</li></a>
+     <a href="{% url 'bmg_app:whyus'%}"> <li>Why Us?</li></a>
+     <a href="{% url 'bmg_app:store'%}"> <li>Store</li></a>
+	 {%if 'id' in request.session%}
+	 <a href="{%  url 'user:logout' %}"> <li> Log Out</li></a>
+	 {%endif%}
+	 {% block login%}
+	 {%if 'id' not in request.session%}
+		 <a href="{% url 'user:login'%}"> <li><i class="fas fa-user"></i> Login</li></a>
+		 <a href="{% url 'user:signup_guide'%}"> <li>Register ?</li></a>
+	 {%endif%}
+	 {% endblock %}
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+      </ul>
+{% endblock %}
+
+{% block media_content %}
+
+  <div class="mid">
+		<div class="search-container">
+			<input list="brow" placeholder="where do you want to go?">
+			<datalist id="brow">
+				{% for item in data %}
+				<a href="#"><option>{{ item.name }}</option></a>
+				{% endfor %}
+			</datalist>
+		</div>
+
+		<div class="card" >
+			<img src="../../../../media/image/abc.jpg" alt="A" style="width:100%">
+			<a href="{% url 'destination:annapurna' %}"><h1>Annapurna Base Camp</h1></a>
+        </div>
+    </div>
+{% endblock%}
+

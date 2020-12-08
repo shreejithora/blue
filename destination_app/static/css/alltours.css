@@ -1,0 +1,42 @@
+.middle{
+    margin: 10px 200px 10px 50px;
+}
+.middle img{
+    height: 333px;
+    width: 500px;
+}
+.content{
+    float: right;
+}
+.middle h1{
+    font-family:'Times New Roman', Times, serif;
+}
+.middle h2 b{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+.middle h3,h3 b{
+    font-family:'Times New Roman', Times, serif;
+}
+.middle h4 b{
+    text-decoration: underline;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+.middle button{
+    font-family:'Times New Roman', Times, serif;
+    height: 7%;
+    width: 100%;
+    font-size: 25px;
+    background-color:black;
+    color: white;
+}
+.middle button:hover{
+    color: white;
+    background-color: tomato;
+}
+p{
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    float: left;
+}
